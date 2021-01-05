@@ -1,0 +1,58 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             targetNamespace="http://localhost/services">
+    <types>
+        <xsd:schema elementFormDefault="qualified" targetNamespace="http://localhost/services">
+            <xsd:element name="Request">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="name" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Response">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="result" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </types>
+
+    <message name="Response">
+        <part element="Response" name="parameter"/>
+    </message>
+    <message name="Request">
+        <part element="Request" name="parameter"/>
+    </message>
+
+    <portType name="Port">
+        <operation name="Printer">
+            <documentation>Prints your Name</documentation>
+            <input message="Request"/>
+            <output message="Request"/>
+        </operation>
+    </portType>
+
+    <binding name="PortBinding" type="Port">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="Printer">
+            <soap:operation soapAction="" style="document"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+
+    <service name="PortService">
+        <documentation>Service prints your name</documentation>
+        <port binding="PortBinding" name="PortName">
+            <soap:address location="http://localhost:8080/name"/>
+        </port>
+    </service>
+</definitions>
