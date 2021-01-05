@@ -28,3 +28,5 @@ Otherwise you can use the tool [Posteman](https://www.postman.com/).
 Example:  
 
 ![Sending Request](src/example.png)
+
+Note that under the section **Headers** you have to disable *Content Type*. Create a new Key with the same name but the value this time is *text/xml*.
