@@ -24,4 +24,7 @@ To send a request you have to use the following curl command:
 ```curl -X POST -H "Content-Type: text/xml" -d [name of your XML-File].xml http://localhost:8080/ws```
 
 Otherwise you can use the tool [Posteman](https://www.postman.com/). 
-Example
+
+Example:  
+
+![Sending Request](src/example.png)
