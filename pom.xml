@@ -8,7 +8,7 @@
         <version>2.3.2.RELEASE</version>
         <relativePath/>
     </parent>
-    <groupId>com.wsdl.demp</groupId>
+    <groupId>com.wsdl.demo</groupId>
     <artifactId>printer-service</artifactId>
     <version>0.1</version>
     <name>printer-service</name>
